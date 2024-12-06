@@ -43,7 +43,7 @@ fn part_1(input_file_name: &str) {
   let mut done_tiles: HashSet<(i32, i32)> = HashSet::new();
   done_tiles.insert((i, j));
 
-  while true {
+  loop {
     let ii = i + di[dir];
     let jj = j + dj[dir];
     if ii < 0 || ii >= n as i32 || jj < 0 || jj >= m as i32 || arr[ii as usize].chars().nth(jj as usize).unwrap() == ' ' {
@@ -73,7 +73,7 @@ fn work_part_2(stp_i: i32, stp_j: i32, arr: Vec<String>) -> u32 {
   let mut dir: u32 = 0;
   done_tiles.insert((stp_i, stp_j, dir));
 
-  while true {
+  loop {
     let ii = i + di[dir as usize];
     let jj = j + dj[dir as usize];
     if ii < 0 || ii >= n as i32 || jj < 0 || jj >= m as i32 || arr[ii as usize].chars().nth(jj as usize).unwrap() == ' ' {
